@@ -70,19 +70,21 @@ em.s{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing
 
 /* hero */
 .hero{padding-block:96px 0}
-.status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;color:var(--ink-2)}
+.status{margin-top:22px;display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;color:var(--ink-2)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);flex:none}
-.hero h1{font-size:clamp(44px,7.6vw,104px);line-height:.96;margin-top:32px;max-width:11.5em;font-weight:500}
+.hero h1{font-size:clamp(44px,7.6vw,104px);line-height:.96;margin-top:0;max-width:11.5em;font-weight:500}
 .hero .sub{font-size:clamp(17px,1.6vw,20px);line-height:1.55;color:var(--ink-2);max-width:36em;margin-top:30px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
-.kpis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:88px}
+.kpis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;margin-top:88px}
+.kgroup+.kgroup{border-left:1px solid var(--line);padding-left:32px;margin-left:32px}
 .kgroup{border-top:1px solid var(--line);padding-top:18px}
 .kgroup .glabel{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink-2);font-weight:500}
 .kgroup .glabel a{color:var(--accent);font-weight:500}
 .kpair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:20px}
+.kpi{text-align:center}
 .kpi .v{font-size:clamp(30px,3.4vw,44px);font-weight:500;letter-spacing:-.04em;line-height:1}
 .kpi .k{font-size:14px;color:var(--ink-2);margin-top:10px;line-height:1.4}
-@media (max-width:760px){.kpis{grid-template-columns:minmax(0,1fr);gap:36px}}
+@media (max-width:760px){.kpis{grid-template-columns:minmax(0,1fr);gap:36px}.kgroup+.kgroup{border-left:0;padding-left:0;margin-left:0}}
 .showcase{margin:80px 0 0;border-radius:20px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
 .showcase .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink-3)}
 .showcase .bar .dots{display:flex;gap:6px}.showcase .bar .dots i{width:10px;height:10px;border-radius:50%;background:var(--line)}
@@ -118,7 +120,7 @@ section.block{padding-block:150px 0}
 .s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:span 12}
 @media (max-width:960px){.s4,.s5,.s6,.s7,.s8{grid-column:span 12}}
 .card h3{font-size:22px;line-height:1.2;letter-spacing:-.025em}
-.card .cap{font-size:14.5px;color:var(--ink-2);margin-top:8px;max-width:44em}
+.card .cap{font-size:14.5px;color:var(--ink-2);margin-top:8px}
 .card .foot{font-size:12.5px;color:var(--ink-3);margin-top:20px}
 
 /* image plates (charts exported from Power BI and Python) */
@@ -158,12 +160,14 @@ section.block{padding-block:150px 0}
 
 /* lesson cards */
 .measures{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;margin-top:28px;border-top:1px solid var(--line)}
-.measures>div{padding:22px 20px 0 0}
+.measures>div{padding:22px 20px 0 0;text-align:center}
 .measures>div+div{padding-left:20px;border-left:1px solid var(--line)}
 .measures .v{font-size:30px;font-weight:500;letter-spacing:-.04em;line-height:1.05;color:var(--accent)}
 .measures .v span{font-size:.55em;color:var(--ink-3);letter-spacing:0}
 .measures p{font-size:14px;color:var(--ink-2);margin-top:10px;line-height:1.5}
 @media (max-width:760px){.measures{grid-template-columns:minmax(0,1fr)}.measures>div{padding-left:0!important;border-left:0!important;margin-top:20px}}
+.fix{text-align:center}
+.fix p{margin-inline:auto}
 .fix .stat{font-size:44px;font-weight:500;letter-spacing:-.045em;line-height:1;color:var(--brass)}
 .fix h3{font-size:20px;margin-top:22px}
 .fix p{font-size:15px;color:var(--ink-2);margin-top:10px;line-height:1.6;max-width:36em}
@@ -191,9 +195,10 @@ section.block{padding-block:150px 0}
 .seg button{font:500 13px var(--f-sans);border:0;background:none;color:var(--ink-2);padding:7px 14px;border-radius:999px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .card-top{display:flex;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;align-items:flex-start}
+.card-top>div:first-child{flex:1 1 420px;min-width:0}
 
 .facts{display:grid}
-.fact{padding-block:24px;border-top:1px solid var(--line)}
+.fact{padding-block:24px;border-top:1px solid var(--line);text-align:center}
 .fact:first-child{border-top:0;padding-top:0}
 .fact:last-child{padding-bottom:0}
 .fact .v{font-size:40px;font-weight:500;letter-spacing:-.045em;line-height:1}
@@ -268,13 +273,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;p
 
 <header class="hero" id="top">
   <div class="wrap">
-    <span class="status rise"><span class="dot"></span>Open to Data, BI and Business Analyst roles · US and remote</span>
     <h1 class="rise d1">I turn raw data into answers <em class="s">you can defend.</em></h1>
     <p class="sub rise d2">Data and business analyst working in SQL, Python and Power BI. I build data pipelines, clean and validate the data, and test every number before it reaches a decision.</p>
     <div class="cta rise d3">
       <a class="pill dark lg" href="#jobs">View selected work</a>
       <a class="pill gold lg" data-dash href="#" target="_blank" rel="noopener">Open live dashboard ↗</a>
     </div>
+    <span class="status rise d3"><span class="dot"></span>Open to Data, BI and Business Analyst roles · US and remote</span>
     <div class="kpis rise d4">
       <div class="kgroup">
         <div class="glabel"><span>US Data Job Market</span><a href="#jobs">See project ↓</a></div>
@@ -308,7 +313,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;p
         <h2 id="jobs-h">The US data job market, <em class="s">tracked every day.</em></h2>
       </div>
       <div>
-        <p class="lead">I built this to support my job search and see what the US market actually asks for. The pipeline collects new data and analytics postings every day, uses AI to extract and enrich 16 fields per posting, from tools, skills and industry to salary and work setting, and publishes the results to a live eight-page Power BI dashboard.</p>
+        <p class="lead">I built this live dashboard to monitor the US data job market and support my own job search. The pipeline collects new data job postings every day, uses AI to extract and enrich 16 fields per posting, from tools, skills and industry to salary and work setting, and publishes the results to a live eight-page Power BI dashboard.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">BigQuery SQL</span><span class="tag">Gemini API</span><span class="tag">Power BI</span><span class="tag">GitHub Actions</span></div>
         <div class="cta"><a class="pill dark" data-dash href="#" target="_blank" rel="noopener">Live dashboard ↗</a><a class="pill line" href="https://github.com/ramsesbenzari/Job_Market_Project" target="_blank" rel="noopener">View code ↗</a></div>
       </div>
@@ -575,9 +580,9 @@ var ROI = [["Chicago","United States",144,4094,11.53,18.03],["Edinburgh","United
     {l:'Supply Chain Analyst', v:88}
   ], 160, function(r){ return '$'+r.v+'K'; });
   hbars(document.getElementById('skills'), [
-    {l:'SQL', v:6300, cls:'top'}, {l:'Excel', v:6300, cls:'top'},
-    {l:'Python', v:2800}, {l:'Power BI', v:2500}, {l:'Tableau', v:2000}
-  ], 6600, function(r){ return '~'+(r.v/1000).toFixed(1)+'K'; });
+    {l:'SQL', v:7.2, cls:'top'}, {l:'Excel', v:6.9, cls:'top'},
+    {l:'Python', v:5.4}, {l:'Power BI', v:4.6}, {l:'Tableau', v:3.9}, {l:'R', v:2.4}
+  ], 8, function(r){ return '~'+r.v.toFixed(1)+'K'; });
 
   var NS = 'http://www.w3.org/2000/svg';
   function el(tag, attrs, parent, text){ var e=document.createElementNS(NS,tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (text!=null) e.textContent=text; if (parent) parent.appendChild(e); return e; }
